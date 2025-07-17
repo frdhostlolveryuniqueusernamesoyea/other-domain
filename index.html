@@ -12,15 +12,6 @@
     </style>
     <meta http-equiv="refresh" content="10; url='https://frdomains.site/'" />
     <!--<link rel="shortcut icon" href="">-->
-    <script>
-        if (window.location.hostname === 'galaxyhost.eu') {
-            const link = document.createElement('link');
-            link.rel = 'icon';
-            link.type = 'image/png';
-            link.href = '/galakyhost.png';
-            document.head.appendChild(link);
-        }
-    </script>
 </head>
 <body style="background: rgb(0,44,106);" id="bodej">
    <center class="downbckgrad">
@@ -29,4 +20,17 @@
     <u><a onclick="javascript:history.back()" style="cursor: pointer;">kk, imma go back then</a></u>
     <br>
   </center>
+
+    <script>
+    if (window.location.hostname === 'galaxyhost.eu') {
+        // Remove existing icons if any
+        document.querySelectorAll("link[rel~='icon']").forEach(link => link.remove());
+
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.type = 'image/png';
+        link.href = '/galakyhost.png?v=' + Date.now(); // bust cache
+        document.head.appendChild(link);
+    }
+  </script>
 </body>
